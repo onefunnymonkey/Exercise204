@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Title</title>
+</head>
+<body>
+<p th:inline="text">
+    You have [[${cartype.id}]] cars.<br />}
+    The manufacturer was [[${cartype.name}]].<br />
+    It model is [[${cartype.type}]].<br />
+    It could be best described as
+    [[${cartype.description}]].
+</p>
+</body>
+</html>

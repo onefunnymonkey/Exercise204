@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Title</title>
+</head>
+<body>
+    <form action="#"
+      th:action="@{/carform}"
+      th:object="${cartype}"
+      method="post">
+    How many Cars do you have? :<input type="number" th:field="*{id}" />
+    <span th:if="${#fields.hasErrors('id')}"
+          th:errors="*{id}"></span><br />
+
+    Car Manufacturer :<input type="text" th:field="*{name}" />
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}"></span><br />
+
+    Car Model :<input type="text" th:field="*{type}" />
+    <span th:if="${#fields.hasErrors('type')}"
+          th:errors="*{type}"></span><br />
+
+    Description :<textarea rows="3" th:field="*{description}" />
+    <span th:if="${#fields.hasErrors('description')}"
+          th:errors="*{description}"></span>
+    <br />
+    <input type="submit" value="Submit - I mean press hard!" />
+
+</form>
+
+</body>
+</html>
