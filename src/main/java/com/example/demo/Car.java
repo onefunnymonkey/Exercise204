@@ -4,10 +4,11 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
 public class Car {
     @NotNull
     @Min(1)
-    private long id;
+    private String id;
 
     @NotNull
     @Size(min=3, max=20)
@@ -21,11 +22,21 @@ public class Car {
     @Size(min=10, max=30)
     private String description;
 
-    public long getId() {
+    public Car() {
+    }
+
+    public Car(@NotNull @Min(1) String id, @NotNull @Size(min = 3, max = 20) String name, @NotNull @Size(min = 3, max = 20) String type, @NotNull @Size(min = 10, max = 30) String description) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

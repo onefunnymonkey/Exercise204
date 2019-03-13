@@ -9,7 +9,7 @@
       th:action="@{/carform}"
       th:object="${cartype}"
       method="post">
-    How many Cars do you have? :<input type="number" th:field="*{id}" />
+    How many Cars do you have? :<input type="text" th:field="*{id}" />
     <span th:if="${#fields.hasErrors('id')}"
           th:errors="*{id}"></span><br />
 
